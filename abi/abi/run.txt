@@ -1,0 +1,38 @@
+For macOS/Linux : 
+
+
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+
+export FLASK_APP=app.py
+export FLASK_ENV=development
+flask db init
+flask db migrate -m "Initial migration"
+flask db upgrade
+
+
+flask run
+
+
+python3 ddos_attacker.py
+
+
+For Windows
+
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
+
+
+set FLASK_APP=app.py
+set FLASK_ENV=development
+flask db init
+flask db migrate -m "Initial migration"
+flask db upgrade
+
+
+flask run
+
+
+python ddos_attacker.py

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col">
+        <h1 class="my-4">Products</h1>
+        <div class="list-group">
+            {% for product in products %}
+                <a href="{{ url_for('product_detail', product_id=product.id) }}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center  rounder-0 border border-primary">
+                    <span>{{ product.name }}</span>
+                    <span class="badge bg-primary rounded-pill">${{ product.price }}</span>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
